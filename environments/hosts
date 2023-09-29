@@ -5,16 +5,17 @@ stapp02 ansible_host=172.16.238.11 ansible_ssh_user=steve ansible_ssh_pass=Am3ri
 
 stapp03 ansible_host=172.16.238.12 ansible_ssh_user=banner ansible_ssh_pass=BigGr33n ansible_sudo_pass=BigGr33n
 
+[loadblancer]
 stlb01 anssible_host=172.16.238.14 ansible_ssh_user=loki ansible_ssh_pass=Mischi3f ansible_sudo_pass=Mischi3f
-
+[database]
 stdb01 ansible_host=172.16.239.10 ansible_ssh_user=peter ansible_ssh_pass=Sp!dy ansible_sudo_pass=Sp!dy
-
+[storage]
 stastor01 ansible_host=172.16.238.15 ansible_ssh_user=natasha ansible_ssh_pass=Bl@kW ansible_sudo_pass=Bl@kW
-
+[backup]
 stbk01 ansible_host=172.16.238.16 ansible_ssh_user=clint ansible_ssh_pass=H@wk3y3 ansible_sudo_pass=H@wk3y3
-
+[mail]
 stmail01 ansible_host=172.16.238.17 ansible_ssh_user=groot ansible_ssh_pass=Gr00T123 ansible_sudo_pass=Gr00T123
-
+[jenkins]
 jenkins ansible_host=172.16.238.19 ansible_ssh_user=root ansible_ssh_pass=S3curePass ansible_sudo_pass=j@rv!s
 
 
