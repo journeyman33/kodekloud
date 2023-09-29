@@ -1,12 +1,9 @@
 #!/bin/bash
 
-password="mjolnir123"
+echo mjolnir123 | sudo -S yum install epel-next-release -y
 
-# Use sudo for the entire script
-echo "$password" | sudo -S bash <<EOF
-yum install epel-next-release -y
-yum install ansible -y
-cp /home/thor/kodekloud-engineer/ansible.cfg /etc/ansible/ansible.cfg
-cp /home/thor/kodekloud-engineer/environments/hosts /etc/ansible/hosts
-EOF
+echo mjolnir123 | sudo -S yum install ansible -y
 
+echo  mjolnir123 | sudo -S cp /home/thor/kodekloud-engineer/ansible.cfg /etc/ansible/ansible.cfg
+
+echo  mjolnir123 | sudo -S cp /home/thor/kodekloud-engineer/environments/hosts /etc/ansible/hosts
