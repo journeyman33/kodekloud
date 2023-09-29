@@ -1,35 +1,22 @@
-[nautilus_apps_db:children]
-nautilus_apps
-nautilus_db_server
+[webservers]
+stapp01
+stapp02
+stapp03
 
-[nautilus_apps:children]
-nautilus_app1
-nautilus_app2
-nautilus_app3
+stapp01 ansible_host=172.16.238.10 ansible_ssh_user=tony ansible_ssh_pass=Ir0nM@n ansible_sudo_pass=Ir0nM@n
 
-[nautilus_app1]
-172.16.238.10 ansible_ssh_user=tony ansible_ssh_pass=Ir0nM@n ansible_sudo_pass=Ir0nM@n
+stapp02 ansible_host=172.16.238.11 ansible_ssh_user=steve ansible_ssh_pass=Am3ric@ ansible_sudo_pass=Am3ric@
 
-[nautilus_app2]
-172.16.238.11 ansible_ssh_user=steve ansible_ssh_pass=Am3ric@ ansible_sudo_pass=Am3ric@
+stapp03 ansible_host=172.16.238.12 ansible_ssh_user=banner ansible_ssh_pass=BigGr33n ansible_sudo_pass=BigGr33n
 
-[nautilus_app3]
-172.16.238.12 ansible_ssh_user=banner ansible_ssh_pass=BigGr33n ansible_sudo_pass=BigGr33n
+stlb01 anssible_host=172.16.238.14 ansible_ssh_user=loki ansible_ssh_pass=Mischi3f ansible_sudo_pass=Mischi3f
 
-[nautilus_http_lbr]
-172.16.238.14 ansible_ssh_user=loki ansible_ssh_pass=Mischi3f ansible_sudo_pass=Mischi3f
+stdb01 ansible_host=172.16.239.10 ansible_ssh_user=peter ansible_ssh_pass=Sp!dy ansible_sudo_pass=Sp!dy
 
-[nautilus_db_server]
-172.16.239.10 ansible_ssh_user=peter ansible_ssh_pass=Sp!dy ansible_sudo_pass=Sp!dy
+stastor01 ansible_host=172.16.238.15 ansible_ssh_user=natasha ansible_ssh_pass=Bl@kW ansible_sudo_pass=Bl@kW
 
-[nautilus_storage_server]
-172.16.238.15 ansible_ssh_user=natasha ansible_ssh_pass=Bl@kW ansible_sudo_pass=Bl@kW
+stbk01 ansible_host=172.16.238.16 ansible_ssh_user=clint ansible_ssh_pass=H@wk3y3 ansible_sudo_pass=H@wk3y3
 
-[nautilus_backup_server]
-172.16.238.16 ansible_ssh_user=clint ansible_ssh_pass=H@wk3y3 ansible_sudo_pass=H@wk3y3
+stmail01 ansible_host=172.16.238.17 ansible_ssh_user=groot ansible_ssh_pass=Gr00T123 ansible_sudo_pass=Gr00T123
 
-[nautilus_mail_server]
-172.16.238.17 ansible_ssh_user=groot ansible_ssh_pass=Gr00T123 ansible_sudo_pass=Gr00T123
-
-[jenkins_server]
-172.16.238.19 ansible_ssh_user=root ansible_ssh_pass=S3curePass ansible_sudo_pass=j@rv!s
+jenkins ansible_host=172.16.238.19 ansible_ssh_user=root ansible_ssh_pass=S3curePass ansible_sudo_pass=j@rv!s
