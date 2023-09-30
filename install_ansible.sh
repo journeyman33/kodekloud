@@ -1,9 +1,13 @@
 #!/bin/bash
 
-echo mjolnir123 | sudo -S yum install epel-next-release -y
+# Check if the script is running as root
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 
-echo mjolnir123 | sudo -S yum install ansible -y
+yum install epel-next-release -y
+yum install ansible -y
+cp /home/thor/kodekloud-engineer/ansible.cfg /etc/ansible/ansible.cfg
+cp /home/thor/kodekloud-engineer/environments/hosts /etc/ansible/hosts
 
-echo  mjolnir123 | sudo -S cp /home/thor/kodekloud-engineer/ansible.cfg /etc/ansible/ansible.cfg
-
-echo  mjolnir123 | sudo -S cp /home/thor/kodekloud-engineer/environments/hosts /etc/ansible/hosts
