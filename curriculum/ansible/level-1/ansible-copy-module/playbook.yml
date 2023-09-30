@@ -1,9 +1,0 @@
-- hosts: stapps
-  gather_facts: false
-  become: true
-
-  tasks:
-    - name: Copy file
-      copy:
-        src: "/usr/src/dba/index.html"
-        dest: "/opt/dba/"
