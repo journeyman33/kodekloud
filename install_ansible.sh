@@ -8,6 +8,6 @@ fi
 
 yum install epel-next-release -y
 yum install ansible -y
-cp /home/thor/kodekloud-engineer/ansible.cfg /etc/ansible/ansible.cfg
-cp /home/thor/kodekloud-engineer/environments/hosts /etc/ansible/hosts
+cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
+cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
 
