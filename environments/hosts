@@ -12,7 +12,7 @@ stlb01 anssible_host=172.16.238.14 ansible_ssh_user=loki ansible_ssh_pass=Mischi
 [database]
 stdb01 ansible_host=172.16.239.10 ansible_ssh_user=peter ansible_ssh_pass=Sp!dy ansible_sudo_pass=Sp!dy
 [storage]
-stastor01 ansible_host=172.16.238.15 ansible_ssh_user=natasha ansible_ssh_pass=Bl@kW ansible_sudo_pass=Bl@kW
+ststor01 ansible_host=172.16.238.15 ansible_ssh_user=natasha ansible_ssh_pass=Bl@kW ansible_sudo_pass=Bl@kW
 [backup]
 stbk01 ansible_host=172.16.238.16 ansible_ssh_user=clint ansible_ssh_pass=H@wk3y3 ansible_sudo_pass=H@wk3y3
 [mail]
