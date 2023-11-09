@@ -12,21 +12,21 @@ Hello my name is Charles Vosloo 👋
 # SSH commands 
 ## This wll prompt you for a a password
 
-| Server                   | SSH Command           |
-|--------------------------|-----------------------|
-| Nautilus App 1           |  ssh tony@stapp01     |
-| Nautilus App 2           |  ssh steve@stapp02    |
-| Nautilus App 3           |  ssh banner@stapp03   |
-| Nautilus HTTP LBR        |  ssh loki@stlb01      |
-| Nautilus DB Server       |  ssh peter@stdb01     |
-| Nautilus Storage Server  |  ssh natasha@ststor01 |
-| Nautilus Backup Server   |  ssh clint@stbkp01    |
-| Nautilus Mail Server     |  ssh groot@stmail01   |
-| Jenkins Server for CI/CD |  ssh jenkins@jenkins  |
+| Server Description     | SSH Command           |
+|------------------------|-----------------------|
+| Stratos App 1          |  ssh tony@stapp01     |
+| Stratos App 2          |  ssh steve@stapp02    |
+| Stratos App 3          |  ssh banner@stapp03   |
+| Stratos LB             |  ssh loki@stlb01      |
+| Stratos DB Server      |  ssh peter@stdb01     |
+| Stratos Storage Server |  ssh natasha@ststor01 |
+| Stratos Backup Server  |  ssh clint@stbkp01    |
+| Stratos Mail Server    |  ssh groot@stmail01   |
+| Jenkins Server         |  ssh jenkins@jenkins  |
 
 
 
-| Name        | Server Description       | One Command to SSH to Server using sshpass                                  |
+| Name        | Server Description       | Use One Command to SSH to Server (with sshpass)                                  |
 |-------------|--------------------------|-----------------------------------------------------------------------------|
 | stapp01     | Nautilus App 1           | `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`     |
 | stapp02     | Nautilus App 2           | `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`    |
