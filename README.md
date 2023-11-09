@@ -28,7 +28,7 @@ Hello my name is Charles Vosloo 👋
 ## much faster
 `sudo yum install sshpass -y`
 
-| Server Name | Description              | Command                                                                     |
+| Server Nmae | Server Description       | One Command to SSH to Server using sshpass                                       |
 |-------------|--------------------------|-----------------------------------------------------------------------------|
 | stapp01     | Nautilus App 1           | `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`     |
 | stapp02     | Nautilus App 2           | `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`    |
