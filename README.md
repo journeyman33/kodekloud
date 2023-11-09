@@ -10,19 +10,19 @@ Hello my name is Charles Vosloo 👋
 - For writing ansible palybooks, the default vi editor doesn't cut it, so I insall vim and vim-essentials. Ansible syntax highlighting/suggestions is trciky: this requres a lengthy .virmrc complete with plugin manager. I like the helix editor, but I haven't found a quick way to instlal it on centos.          
 - What's really cool, with having ansible installed, I am able to do many KodeKloud Engineer linux questions, using Anisble the way it was intended to be used.   
 # SSH commands 
-## This wll prompt you for a a password
 
-| Nautilus Servers         | SSH                    | Easy One Command to SSH to Server (using sshpass)                             |
-|--------------------------|------------------------|-------------------------------------------------------------------------------|
-| Stratos App 1            |  ssh tony@stapp01      |  `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`      |
-| Stratos App 2            |  ssh steve@stapp02     |  `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`     |
-| Stratos App 3            |  ssh banner@stapp03    |  `sshpass -p BigGr33n ssh -o StrictHostKeyChecking=no banner@172.16.238.12`   |
-| Stratos LB               |  ssh loki@stlb01       |  `sshpass -p Mischi3f ssh -o StrictHostKeyChecking=no loki@172.16.238.14`     |
-| Stratos DB Server        |  ssh peter@stdb01      |  `sshpass -p 'Sp!dy' ssh -o StrictHostKeyChecking=no peter@172.16.239.10`     |
-| Stratos Storage Server   |  ssh natasha@ststor01  |  `sshpass -p Bl@kW ssh -o StrictHostKeyChecking=no natasha@172.16.238.15`     |
-| Stratos Backup Server    |  ssh clint@stbkp01     |  `sshpass -p H@wk3y3 ssh -o StrictHostKeyChecking=no clint@172.16.238.16`     |
-| Stratos Mail Server      |  ssh groot@stmail01    |  `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17`    |
-| Jenkins Server           |  ssh jenkins@jenkins   |  `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19`  |
+
+| Nautilus Servers         | SSH                      | Easy One Command to SSH to Server (using sshpass)                             |
+|--------------------------|--------------------------|-------------------------------------------------------------------------------|
+| Stratos App 1            |   ssh tony@stapp01       |  `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`      |
+| Stratos App 2            |   ssh steve@stapp02      |  `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`     |
+| Stratos App 3            |   ssh banner@stapp03     |  `sshpass -p BigGr33n ssh -o StrictHostKeyChecking=no banner@172.16.238.12`   |
+| Stratos LB               |   ssh loki@stlb01        |  `sshpass -p Mischi3f ssh -o StrictHostKeyChecking=no loki@172.16.238.14`     |
+| Stratos DB Server        |   ssh peter@stdb01       |  `sshpass -p 'Sp!dy' ssh -o StrictHostKeyChecking=no peter@172.16.239.10`     |
+| Stratos Storage Server   |   ssh natasha@ststor01   |  `sshpass -p Bl@kW ssh -o StrictHostKeyChecking=no natasha@172.16.238.15`     |
+| Stratos Backup Server    |   ssh clint@stbkp01      |  `sshpass -p H@wk3y3 ssh -o StrictHostKeyChecking=no clint@172.16.238.16`     |
+| Stratos Mail Server      |   ssh groot@stmail01     |  `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17`    |
+| Jenkins Server           |   ssh jenkins@jenkins    |  `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19`  |
 
 
 
