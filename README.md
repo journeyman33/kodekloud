@@ -12,23 +12,21 @@ Hello my name is Charles Vosloo 👋
 # SSH commands 
 ## This wll prompt you for a a password
 
-| Service Name             | Command                     |
-|--------------------------|-----------------------------|
-| Nautilus App 1           | `ssh tony@172.16.238.10`    |
-| Nautilus App 2           | `ssh steve@172.16.238.11`   |
-| Nautilus App 3           | `ssh banner@172.16.238.12`  |
-| Nautilus HTTP LBR        | `ssh loki@172.16.238.14`    |
-| Nautilus DB Server       | `ssh peter@172.16.239.10`   |
-| Nautilus Storage Server  | `ssh natasha@172.16.238.15` |
-| Nautilus Backup Server   | `ssh clint@172.16.238.16`   |
-| Nautilus Mail Server     | `ssh groot@172.16.238.17`   |
-| Jenkins Server for CI/CD | `ssh jenkins@172.16.238.19` |
+| Server                   | SSH Command           |
+|--------------------------|-----------------------|
+| Nautilus App 1           |  ssh tony@stapp01     |
+| Nautilus App 2           |  ssh steve@stapp02    |
+| Nautilus App 3           |  ssh banner@stapp03   |
+| Nautilus HTTP LBR        |  ssh loki@stlb01      |
+| Nautilus DB Server       |  ssh peter@stdb01     |
+| Nautilus Storage Server  |  ssh natasha@ststor01 |
+| Nautilus Backup Server   |  ssh clint@stbkp01    |
+| Nautilus Mail Server     |  ssh groot@stmail01   |
+| Jenkins Server for CI/CD |  ssh jenkins@jenkins  |
 
-# SSH to server with sshpass
-## much faster
-`sudo yum install sshpass -y`
 
-| Server Nmae | Server Description       | One Command to SSH to Server using sshpass                                       |
+
+| Name        | Server Description       | One Command to SSH to Server using sshpass                                  |
 |-------------|--------------------------|-----------------------------------------------------------------------------|
 | stapp01     | Nautilus App 1           | `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`     |
 | stapp02     | Nautilus App 2           | `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`    |
