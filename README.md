@@ -45,7 +45,6 @@ yum install ansible -y
 cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
 ```
-ansible webservers -m ping works!
 
 The ansisble host file contains the following inventory items with the ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded:
 
