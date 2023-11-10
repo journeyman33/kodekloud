@@ -9,7 +9,7 @@ Hello my name is Charles Vosloo 👋
 - For git questions, I like lazygit, it cuts down on the need to memorizing commands.
 - For writing ansible palybooks, the default vi editor doesn't cut it, so I insall vim and vim-essentials. Ansible syntax highlighting/suggestions is trciky: this requres a lengthy .virmrc complete with plugin manager. I like the helix editor, but I haven't found a quick way to instlal it on centos.          
 - What's really cool, with having ansible installed, I am able to do many KodeKloud Engineer linux questions, using Anisble the way it was intended to be used.   
-# SSH commands 
+
 
 
 | Nautilus Servers         |      SSH                 | Easy One Command to SSH to Server (using sshpass)                             |
@@ -24,8 +24,9 @@ Hello my name is Charles Vosloo 👋
 | Stratos Mail Server      |  groot@stmail01          |  `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17`    |
 | Jenkins Server           |  jenkins@jenkins         |  `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19`  |
 
+## Ansible
 
-
+The best way to learn ansible is to use it. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions,to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide the methodology.        
 
 
 
