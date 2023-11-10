@@ -32,7 +32,6 @@ The best way to learn ansible is to use for all server configuration tasks.  Man
 ```
 git clone https://github.com/CharlesVosloo/kodekloud.git
 ```
-```
 2. Run this script to install ansible and copy ansible.cfg and ansible inventory hosts file from the repo to the default /etc/ansible/ location which means that ansible can be run from anywhere.
 ```
 cd /home/thor/kodekloud 
@@ -40,7 +39,6 @@ sudo -s
 ./install_ansible.sh  
 ```
 ```
-
 #!/bin/bash
 yum install epel-next-release -y
 yum install ansible -y
