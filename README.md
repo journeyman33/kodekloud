@@ -1,4 +1,4 @@
-# KodeKloud Engineer
+# KodeKloud Engineer   -   THIS IS A WORK IN PROGRESS   -
 
 Hello my name is Charles Vosloo 👋
 
@@ -26,7 +26,7 @@ Hello my name is Charles Vosloo 👋
 
 ## Ansible
 
-The best way to learn ansible is to use it. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions,to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide the methodology.        
+The best way to learn ansible is to use it. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide the methodology. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need only some tweaking. I full description of the process can be found here [ansible](myblock.com).               
 
 
 
