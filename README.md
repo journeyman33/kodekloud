@@ -12,7 +12,7 @@ Hello my name is Charles Vosloo 👋
 # SSH commands 
 
 
-| Nautilus Servers         | SSH                      | Easy One Command to SSH to Server (using sshpass)                             |
+| Nautilus Servers         |      SSH                 | Easy One Command to SSH to Server (using sshpass)                             |
 |--------------------------|:-------------------------|:-----------------------------------------------------------------------------:|
 | Stratos App 1            |  tony@stapp01            |  `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`      |
 | Stratos App 2            |  steve@stapp02           |  `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`     |
