@@ -28,17 +28,19 @@ Hello my name is Charles Vosloo 👋
 
 The best way to learn ansible is to use for all server configuration tasks.  Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need only some tweaking. refer to [blog].
 
-The first step is to clone the repo on Jump Server 
+1. The first step is to clone the repo on Jump Server 
 ```
 git clone https://github.com/CharlesVosloo/kodekloud.git
 ```
+```
+2. Run this script to install ansible and copy ansible.cfg and ansible inventory hosts file from the repo to the default /etc/ansible/ location which means that ansible can be run from anywhere.
 ```
 cd /home/thor/kodekloud 
 sudo -s 
 ./install_ansible.sh  
 ```
-This script installs ansible and copies an ansible.cfg and an ansible inventory hosts file from the repo to the default /etc/ansible/ location.
 ```
+
 #!/bin/bash
 yum install epel-next-release -y
 yum install ansible -y
@@ -46,7 +48,7 @@ cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
 ```
 
-The ansisble host file contains the following inventory items with the ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded:
+The ansisble host file contains the following inventory items with the variables ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded:
 
  Nautilus Servers            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
@@ -59,6 +61,7 @@ The ansisble host file contains the following inventory items with the ansible_h
 | Stratos Backup Server      |  ansible backup -m ping           | backup
 | Stratos Mail Server        |  ansible mail -m ping             | mail
 
+3. You are now ready to write a playbook
 
 
 
