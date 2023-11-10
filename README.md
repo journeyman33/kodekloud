@@ -46,7 +46,7 @@ cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
 ```
 
-The ansible host file contains the following inventory items with the variables ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded. The following ansible ad hoc commands should all work:  
+The ansible host file contains the following inventory items with the variables ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded. The following ad hoc commands should all work:  
 
  Nautilus Servers            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
