@@ -37,7 +37,7 @@ cd /home/thor/kodekloud
 sudo -s 
 ./install_ansible.sh  
 ```
-This script install ansible and sets up an ansible.cfg and ansible inventory/hosts file in the default /etc/ansible/ location.
+This script installs ansible and copies an ansible.cfg and an ansible inventory hosts file from the repo to the default /etc/ansible/ location.
 ```
 #!/bin/bash
 yum install epel-next-release -y
@@ -45,6 +45,23 @@ yum install ansible -y
 cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
 ```
+ansible webservers -m ping works!
+
+The ansisble host file contains the following inventory items with the ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded:
+
+ Nautilus Servers            | Ansible Adhoc commnand            | alias
+|----------------------------|-----------------------------------|---------------|
+| stapp01, stapp02, stapp03  |  ansible webservers -m ping       | webservers
+| Stratos App 1              |  ansible stapp01 -m ping          | stapp01                                         |
+| Stratos App 2              |  ansible stapp02 -m ping          | stapp02                                          |
+| Stratos App 3              |  ansible atapp03 -m ping          | stapp03
+| Stratos Load Balancer      |  ansible loadbalancer -m ping     | loadbalancer 
+| Stratos Database Server    |  ansible database -m ping         | storage
+| Stratos Backup Server      |  ansible backup -m ping           | backup
+| Stratos Mail Server        |  ansible mail -m ping             | mail
+
+
+
 
 
 
