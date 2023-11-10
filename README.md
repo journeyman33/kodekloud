@@ -28,11 +28,23 @@ Hello my name is Charles Vosloo 👋
 
 The best way to learn ansible is to use for all server configuration tasks.  Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need only some tweaking. refer to [blog].
 
-The first step is to (on jump server) clone the repo 
+The first step is to clone the repo on Jump Server 
 ```
-git clone https://github.com/CharlesVosloo/kodekloud.github
+git clone https://github.com/CharlesVosloo/kodekloud.git
 ```
-
+```
+cd /home/thor/kodekloud 
+sudo -s 
+./install_ansible.sh  
+```
+This script install ansible and sets up an ansible.cfg and ansible inventory/hosts file in the default /etc/ansible/ location.
+`
+#!/bin/bash
+yum install epel-next-release -y
+yum install ansible -y
+cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
+cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
+`
 
 
 
