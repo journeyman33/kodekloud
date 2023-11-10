@@ -49,7 +49,7 @@ ansible webservers -m ping works!
 
 The ansisble host file contains the following inventory items with the ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded:
 
- Nautilus Servers            | Ansible Adhoc commnand            | alias
+ Nautilus Servers            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
 | stapp01, stapp02, stapp03  |  ansible webservers -m ping       | webservers
 | Stratos App 1              |  ansible stapp01 -m ping          | stapp01                                         |
