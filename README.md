@@ -31,7 +31,7 @@ The best way to learn ansible is to use for all server configuration tasks.  Man
 The first step is to (on jump server) clone the repo 
 ```
 git clone https://github.com/CharlesVosloo/kodekloud.github
-'''
+```
 
 
 
