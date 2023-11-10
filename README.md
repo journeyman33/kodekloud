@@ -38,13 +38,13 @@ sudo -s
 ./install_ansible.sh  
 ```
 This script install ansible and sets up an ansible.cfg and ansible inventory/hosts file in the default /etc/ansible/ location.
-`
+```
 #!/bin/bash
 yum install epel-next-release -y
 yum install ansible -y
 cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
-`
+```
 
 
 
