@@ -26,7 +26,12 @@ Hello my name is Charles Vosloo 👋
 
 ## Using Ansible to do Linux tasks
 
-The best way to learn ansible is to use for all server configuration tasks.  Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need only some tweaking. refer to [blog] . The first step is to clone the repo `git clone https://github.com/CharlesVosloo/kodekloud.git`                   
+The best way to learn ansible is to use for all server configuration tasks.  Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need only some tweaking. refer to [blog].
+
+The first step is to (on jump server) clone the repo 
+```
+git clone https://github.com/CharlesVosloo/kodekloud.github
+'''
 
 
 
