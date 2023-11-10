@@ -26,7 +26,7 @@ Hello my name is Charles Vosloo 👋
 
 ## Using Ansible to do Linux tasks
 
-The best way to learn ansible is to use for all server configuration tasks.  Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need only some tweaking. refer to [blog].
+The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking.
 
 1. The first step is to clone the repo on Jump Server 
 ```
@@ -46,7 +46,7 @@ cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
 ```
 
-The ansisble host file contains the following inventory items with the variables ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded:
+The ansible host file contains the following inventory items with the variables ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded. The following ansible ad hoc commands should all work:  
 
  Nautilus Servers            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
