@@ -48,7 +48,7 @@ cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/inventory/hosts /etc/ansible/hosts
 ```
 
-Below is a table summarizing how the ansible ping ad hoc command will now work on all Nuatilus Severs:  
+Below is a table summarizing the usage of the ansible ping ad hoc command, which  will now work on all Nuatilus Severs:  
 
  Nautilus Servers            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
