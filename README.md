@@ -28,25 +28,27 @@ Hello my name is Charles Vosloo 👋
 
 The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking.
 
-1. The first step is to clone the repo on Jump Server 
+1. The first step is to clone this repo on Jump Server 
 ```
 git clone https://github.com/journeyman33/kodekloud.git
 ```
-2. Run this script to install ansible and copy ansible.cfg and ansible inventory hosts file from the repo to the default /etc/ansible/ location which means that ansible can be run from anywhere.
+2. Then copy these lines Run to install the ansible install script on jump host. 
 ```
 cd /home/thor/kodekloud 
 sudo -s 
 ./install_ansible.sh  
 ```
+ The ansible install script listed below will copy ansible.cfg and ansible inventory hosts file from the repo to the default /etc/ansible/ location on jump host which means that ansible can be run from anywhere 
+
 ```
 #!/bin/bash
 yum install epel-next-release -y
 yum install ansible -y
 cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
-cp /home/thor/kodekloud/environments/hosts /etc/ansible/hosts
+cp /home/thor/kodekloud/inventory/hosts /etc/ansible/hosts
 ```
 
-The ansible host file contains the following inventory items with the variables ansible_host, ansible_ssh_user and ansible_ssh_pass hard coded. The following ad hoc commands should all work:  
+Below is a table summarizing how the ansible ping ad hoc command will now work on all Nuatilus Severs:  
 
  Nautilus Servers            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
@@ -59,25 +61,13 @@ The ansible host file contains the following inventory items with the variables 
 | Stratos Backup Server      |  ansible backup -m ping           | backup
 | Stratos Mail Server        |  ansible mail -m ping             | mail
 
+
+
 3. You are now ready to write a playbook
 
 
 
 
-
-
-
-
-
-# Getting Started
-
-## On Jump host
-
-- Clone the repository: `git clone https://github.com/CharlesVosloo/kodekloud-engineer.git`
-- Go to folder: `cd kodekloud-engineer`
-- Run this scipt as roor: `./install_ansible.sh`
-- This scipt installs epel-release and ansible and then sets up ansible by copying the KodeKlode servers inventory file to ansible's default lcation /etc/ansible/anisble.cfg and configires /etc/anisible/hosts. 
-- Ansible ad hoc cammands can be run from any location
 
 ## An example of how to solve linux problems with ansible
 
