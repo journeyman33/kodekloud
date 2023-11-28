@@ -24,7 +24,7 @@ There are two main ways to contribute to this project:
 
 ## If possible use Conventional Commit Messages
 
-Find out at [conventional commit messages](https://www.conventionalcommits.org/) why they are cool.
+Find out about [conventional commit messages](https://www.conventionalcommits.org/) and why they are useful.
 
 ## Code of Conduct
 
