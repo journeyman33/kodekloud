@@ -36,7 +36,7 @@ git clone https://github.com/journeyman33/kodekloud.git
 ```
 cd /home/thor/kodekloud 
 sudo -s 
-./install_ansible.sh  
+./scripts/install_ansible.sh  
 ```
  The ansible install script listed below will copy ansible.cfg and ansible inventory hosts file from the repo to the default /etc/ansible/ location on jump host which means that ansible can be run from anywhere 
 
