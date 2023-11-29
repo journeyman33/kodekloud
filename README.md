@@ -75,5 +75,5 @@ After SSHing into the server I usually run one these scripts, depending on the t
 |install_ansible.sh  |Installs ansible on jump host, copy inventory     |Linux tasks: Configure Stratos App Severs
 |install_lazygit.sh  |Installs lazygit                                  |Git tasks (on centos)
 |webi_k9s.sh         |Installs K9s using webi                           |Kubernetes tasks (on centos)
-|webi_k9s_krew.sh    |Install k9s using webi, ctx and ns using krew     |Kuberneses tasks (on ubuntu!)
+|webi_k9s_krew.sh    |Install k9s using webi, ctx and ns using krew     |Kuberneses tasks (on ubuntu)
 |webi_vim_ansible.sh    |Install vim, configure .vimrc for ansible         |Ansible tasks (centos)
