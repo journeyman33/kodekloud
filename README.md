@@ -1,6 +1,6 @@
 # KodeKloud 
 
-Hello 👋 my name is Charles Vosloo.<br>  This is part of my <span style="color: red;">*journey*</span> learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
+Hello 🖐️ my name is Charles Vosloo.<br>  This is part of my <span style="color: red;">*journey*</span> learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
 ## Table of Contents
 1. [Easy One Command to SSH to Nautilus Servers](##1.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
 1. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
