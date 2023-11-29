@@ -5,7 +5,7 @@ Hello 🖐️ my name is Charles Vosloo.<br>  This is part of my <span style="co
 1. [Easy One Command to SSH to Nautilus Servers](##1.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
 1. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
 1. [Scripts](##3.-Scripts)
-   
+1. ...   
 
 
    
