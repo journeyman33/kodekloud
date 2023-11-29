@@ -1,11 +1,11 @@
 # KodeKloud 
 
-Hello 👋 my name is Charles Vosloo.<br>  This is part of my *journey* learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
+Hello 👋 my name is Charles Vosloo.<br>  This is part of my <span style="color: red;">*journey*</span> learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
 ## Table of Contents
 1. [Easy One Command to SSH to Nautilus Servers](##1.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
 1. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
 1. [Scripts](##3.-Scripts)
-   1. [Subsection 1](#subsection-1)
+   
 
 
    
@@ -26,7 +26,7 @@ Hello 👋 my name is Charles Vosloo.<br>  This is part of my *journey* learning
 
 ## 2. Using Ansible to do Linux tasks
 
-The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking.
+The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking :-).
 
 1. The first step is to clone this repo on Jump Server 
 ```
@@ -50,7 +50,7 @@ cp /home/thor/kodekloud/inventory/hosts /etc/ansible/hosts
 
 Below is a table summarizing the usage of the ansible ping ad hoc command, which  will now work on all Nuatilus Severs:  
 
- Nautilus Servers            | Ansible ad hoc command            | alias
+ Nautilus Server(s)            | Ansible ad hoc command            | alias
 |----------------------------|-----------------------------------|---------------|
 | stapp01, stapp02, stapp03  |  ansible webservers -m ping       | webservers
 | Stratos App 1              |  ansible stapp01 -m ping          | stapp01                                         |
@@ -63,9 +63,11 @@ Below is a table summarizing the usage of the ansible ping ad hoc command, which
 
 
 
-3. Now, let's write a playbook
+3. Now, let's write a playbook!
 
 
+
+## 3. Scripts
 
 
 
