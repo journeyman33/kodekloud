@@ -70,10 +70,10 @@ Below is a table summarizing the usage of the ansible ping ad hoc command, which
 ## 3. Scripts
 After SSHing into the server I usually run one these scripts, depending on the task.
  
-| script (folder)       | What is does                                     | For  
-|-------------------    |--------------------------------------------------|----------------------
-|1.install_ansible.sh   |Installs ansible on jump host, copies  inventory file to jump host.     |Linux tasks: Configure Stratos App Severs
-|2. install_lazygit.sh  |Installs lazygit                                  |Git tasks (on centos)
-|3. webi_k9s.sh         |Installs K9s using webi                           |Kubernetes tasks (on centos)
-|4. webi_k9s_krew.sh    |Install k9s using webi, ctx and ns using krew     |Kuberneses tasks (on ubuntu)
-|5. webi_vim_ansible.sh |Install vim, configure .vimrc for ansible         |Ansible tasks (centos)
+| script (folder)        | What is does                                     | For  
+|-------------------     |--------------------------------------------------|----------------------
+|1.install_ansible.sh    |Installs ansible on jump host, copies  inventory file to jump host.     |Linux tasks: Configure Stratos App Severs
+|2. install_lazygit.sh   |Installs lazygit                                  |Git tasks (on centos)
+|3. webi_k9s.sh          |Installs K9s using webi                           |Kubernetes tasks (on centos)
+|4. webi_k9s_krew.sh     |Install k9s using webi, ctx and ns using krew     |Kuberneses tasks (on ubuntu)
+|5. webi_vim_ansible.sh  |Install vim, configure .vimrc for ansible         |Ansible tasks (centos)
