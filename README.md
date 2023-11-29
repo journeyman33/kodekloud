@@ -74,8 +74,28 @@ After SSHing into the server I usually run one these scripts, depending on the t
 |-------------------     |--------------------------------------------------|----------------------
 |1.install_ansible.sh    |Installs ansible on jump host, copies  inventory file to jump host.     |Linux tasks: Configure Stratos App Severs
 |2. install_lazygit.sh   |Installs lazygit                                  |Git tasks (on centos)
-|3. webi_k9s.sh          |Installs vim nd k9d  using webi                           |Kubernetes tasks (on centos)
-|4. webi_k9s_krew.sh     |Install k9s using webi, ctx and ns using krew     |Kuberneses tasks (on ubuntu)
-|5. webi_vim_ansible.sh  |Install vim, configures .vimrc for ansible         |Ansible tasks (centos)
+|3. webi_k9s.sh          |Installs vim nd k9d  using webi                   |Kubernetes tasks (on centos)
+|4. webi_k9s_krew.sh     |Install k9s using webi, ctx and ns using krew     |Kubernetes tasks (on ubuntu)
+|5.webi_vim_ansible.sh      | Install vim, configures .vimrc for ansible yaml    |Ansible tasks (centos)
+|
+1. install_ansible.sh .<br>
+     Explained in [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
+2. install_lazygit.sh .<br>
+     My goto cli TUI tool for doing complicated tasks with git.   
+   
+3.  webi_k9s.sh .<br> 
+    [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line:
+ ```
+   curl https://webi.sh/webi | sh
+``` 
 
 
+This script uses webi to install k9s and vim-essentials but you could for example install some of the following additional packages with the now newly insalled webi command:
+```
+webi lf bat gh jq ripgrep zoxide brew 
+```   
+But expect to wait a long time, especially if you are installing brew.
+
+
+4. webi_k9s_krew.sh .<br>
+   I use this script on Kodekloud's Kubernetes Playgrounds. It is very useful on the Kodekloud Ultimate CKAD course which runs on Ubuntu. 
