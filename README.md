@@ -63,15 +63,10 @@ Below is a table summarizing the usage of the ansible ping ad hoc command, which
 
 
 
-3. You are now ready to write a playbook
+3. Now, let's write a playbook
 
 
 
 
 
-## An example of how to solve linux problems with ansible
 
-## Playbook 1: configure jump host for ansible devlepment questions
-## Playbook 2: for git questions
-## Playbook 3: for kubernetes questions
-## Playbook 4  for ultimat CKAD 
