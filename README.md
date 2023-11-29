@@ -1,19 +1,19 @@
-# KodeKloud Engineer   -   THIS IS A WORK IN PROGRESS   -
+# KodeKloud 
 
-Hello my name is Charles Vosloo 👋
-
-- This repository contains scripts that helped me with KodeKloud Engineer question, KodeKloud course (like ultimate CKAD) and can be run on KodeKloud playgrounds.
-- These are in the form of ansible playbooks. It is actually quite easy to install ansible on a remote server.
-- The following TUI tools have helped me:
-- For kubernetes questions, it is very useful to have k9s installed, particularly if you are doing a long question or doing any troubelshooting. And the why not just install some kubectl pluging that you are used to like ctx,ns or neat.   
-- For git questions, I like lazygit, it cuts down on the need to memorizing commands.
-- For writing ansible palybooks, the default vi editor doesn't cut it, so I insall vim and vim-essentials. Ansible syntax highlighting/suggestions is trciky: this requres a lengthy .virmrc complete with plugin manager. I like the helix editor, but I haven't found a quick way to instlal it on centos.          
-- What's really cool, with having ansible installed, I am able to do many KodeKloud Engineer linux questions, using Anisble the way it was intended to be used.   
+Hello 👋 my name is Charles Vosloo.<br>  This is part of my *journey* learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
+## Table of Contents
+1. [Easy One Command to SSH to Nautilus Servers](##1.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
+1. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
+1. [Scripts](##3.-Scripts)
+   1. [Subsection 1](#subsection-1)
 
 
+   
 
-| Nautilus Servers         |      SSH                 | Easy One Command to SSH to Server (using sshpass)                             |
-|--------------------------|--------------------------|:-----------------------------------------------------------------------------:|
+
+## 1. Easy One Command to SSH to Nautilus Servers
+| Server         |      User                 |  SSH                             |
+|--------------------------|--------------------------|:-----------------------------------------------------------------------------|
 | Stratos App 1            |  tony@stapp01            |  `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`      |
 | Stratos App 2            |  steve@stapp02           |  `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`     |
 | Stratos App 3            |  banner@stapp03          |  `sshpass -p BigGr33n ssh -o StrictHostKeyChecking=no banner@172.16.238.12`   |
@@ -24,7 +24,7 @@ Hello my name is Charles Vosloo 👋
 | Stratos Mail Server      |  groot@stmail01          |  `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17`    |
 | Jenkins Server           |  jenkins@jenkins         |  `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19`  |
 
-## Using Ansible to do Linux tasks
+## 2. Using Ansible to do Linux tasks
 
 The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking.
 
