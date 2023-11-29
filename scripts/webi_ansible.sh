@@ -1,0 +1,1 @@
+ sudo echo 'autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0 cursorline' >> /home/thor/.vimrc; sudo dnf update -y; sudo install git -y; sudo dnf install vim -y; curl https://webi.sh/webi | sh; webi vim-essentials; echo "export EDTOR=vim" >> /home/thor/.bashrc; source ~/.bashrc
