@@ -106,4 +106,4 @@ But expect to wait a long time, especially if you are installing brew.
 
 
 4. webi_k9s_krew.sh .<br>
-   I use this script on Kodekloud's Kubernetes Playgrounds. It is very useful on the Kodekloud Ultimate CKAD course which runs on Ubuntu. 
+   I use this script on Kodekloud's Kubernetes Playgrounds and useful on the Kodekloud Ultimate CKAD course which runs on Ubuntu. 
