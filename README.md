@@ -15,6 +15,7 @@ My name is Charles Vosloo.<br><br> This is part of my <span style="color: red;">
 ## 1. Easy One Command to SSH to Nautilus Servers
 | Server         |      User                 |  SSH                             |
 |--------------------------|--------------------------|:-----------------------------------------------------------------------------|
+| jump_host                |  thor@jump_host          |  `sshpass -p mjolnir123 ssh -o StrictHostKeyChecking=no thor@jump_host`            |
 | Stratos App 1            |  tony@stapp01            |  `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`      |
 | Stratos App 2            |  steve@stapp02           |  `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`     |
 | Stratos App 3            |  banner@stapp03          |  `sshpass -p BigGr33n ssh -o StrictHostKeyChecking=no banner@172.16.238.12`   |
