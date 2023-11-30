@@ -39,7 +39,7 @@ cd /home/thor/kodekloud
 sudo -s 
 ./scripts/install_ansible.sh  
 ```
- The ansible install script listed below will copy ansible.cfg and ansible inventory hosts file from the repo to the default /etc/ansible/ location on jump host which means that ansible can be run from anywhere 
+ The ansible install script listed below will also copy ansible.cfg and the ansible inventory hosts file from the repo to the default /etc/ansible/hosts location on jump host which means that ansible can be run from anywhere and target the hostnames found in this file. 
 
 ```
 #!/bin/bash
@@ -49,9 +49,9 @@ cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
 cp /home/thor/kodekloud/inventory/hosts /etc/ansible/hosts
 ```
 
-Below is a table summarizing the usage of the ansible ping ad hoc command, which  will now work on all Nuatilus Severs:  
+Below is a table summarizing the usage of the ansible ping ad hoc command, which can now target all Nuatilus Servers using the hostnames (inventory aliases) listed below.  
 
- Nautilus Server(s)            | Ansible ad hoc command            | alias
+ Nautilus Server(s)            | Ansible ad hoc command            | hostname
 |----------------------------|-----------------------------------|---------------|
 | stapp01, stapp02, stapp03  |  ansible webservers -m ping       | webservers
 | Stratos App 1              |  ansible stapp01 -m ping          | stapp01                                         |
@@ -65,6 +65,12 @@ Below is a table summarizing the usage of the ansible ping ad hoc command, which
 
 
 3. Now, let's write a playbook!
+
+
+
+
+
+
 
 
 
@@ -85,13 +91,13 @@ After SSHing into the server I usually run one these scripts, depending on the t
      My goto cli TUI tool for doing complicated tasks with git.   
    
 3.  webi_k9s.sh .<br> 
-    [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line:
+    [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line, hence  the above script:
  ```
    curl https://webi.sh/webi | sh
 ``` 
 
 
-This script uses webi to install k9s and vim-essentials but you could for example install some of the following additional packages with the now newly insalled webi command:
+ The webi_k9s.sh script uses webi to install only k9s and vim-essentials and dnf to install vim and git (required by webi). But you could for example install some of the following additional packages with the now newly insalled webi command:
 ```
 webi lf bat gh jq ripgrep zoxide brew 
 ```   
