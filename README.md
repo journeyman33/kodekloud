@@ -116,7 +116,7 @@ systemctl start httpd
 [chatGpt](https://chat.openai.com/) will give you boilerplate yaml if you copy these command and ask for a comparable playbook.
 You will see that the playbook requires 2 modules: the yum (or package) module and the lineinfile module.
 
-However, the original word prompt, quoted above, gave me the answer right off the bat:
+However, the original word prompt, quoted above, gave me the answer right off the bat!
 ```yaml
 cat > httpd.yaml <<EOF
 ---
@@ -151,7 +151,7 @@ cat > httpd.yaml <<EOF
 EOF
 ```
 
-Now, let's run the playbook  on jump_host:
+Now, let's run the playbook  on jump_host
 ```bash
 ansible-playbook httpd.yaml
 ```
