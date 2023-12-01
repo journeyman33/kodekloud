@@ -109,7 +109,7 @@ Let's say the linux task is to<br>
 The imperative way to think about this task would be:
 ```bash
 ssh tony@stapp01 steve@stapp01 banner@stapp03
-sudo -s;  yum install git -y; yum httpd  -y 
+sudo -s;  yum install git -y; yum install httpd  -y 
 sudo sed -i 's/^Listen 80/Listen 81/' /etc/httpd/conf/httpd.conf
 systemctl start httpd
 ``````
