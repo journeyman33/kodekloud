@@ -22,7 +22,7 @@ There are two main ways to contribute to this project:
 4. Push to the branch: `git push origin feature/your-feature`.
 5. Submit a pull request.
 
-## If possible use Conventional Commit Messages
+<br>
 
 Find out about [conventional commit messages](https://www.conventionalcommits.org/) and why they are useful.
 
