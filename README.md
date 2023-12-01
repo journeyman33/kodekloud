@@ -3,9 +3,10 @@
 Hello 🖐️ <br>
 My name is Charles Vosloo.<br><br> This is part of my <span style="color: red;">*journey*</span> learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
 ## Table of Contents
-1. [Easy One Command to SSH to Nautilus Servers](##1.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
-1. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
-1. [Scripts](##3.-Scripts)
+1. [Easy One Command to SSH to Nautilus Servers](##3.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
+1. [Scripts](##2.-Scripts)
+1. [Using Ansible to do Linux tasks](##3.-Using-Ansible-to-do-Linux-tasks)
+
 1. ...   
 
 
@@ -26,7 +27,40 @@ My name is Charles Vosloo.<br><br> This is part of my <span style="color: red;">
 | Stratos Mail Server      |  groot@stmail01          |  `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17`    |
 | Jenkins Server           |  jenkins@jenkins         |  `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19`  |
 
-## 2. Using Ansible to do Linux tasks
+## 2. Scripts
+After SSHing into the server I usually run one these scripts, depending on the task.
+ 
+| /scripts (folder)        | What is does                                     | For  
+|-------------------     |--------------------------------------------------|----------------------
+|1.install_ansible.sh    |Installs ansible on jump host, copies  inventory file to jump host.     |Linux tasks: e.g. Configure Stratos App Severs
+|2. install_lazygit.sh   |Installs lazygit                                  |Git tasks (on centos)
+|3. webi_k9s.sh          |Installs vim nd k9d  using webi                   |Kubernetes tasks (on centos)
+|4. webi_k9s_krew.sh     |Install k9s using webi, ctx and ns using krew     |Kubernetes tasks (on ubuntu)
+|5.webi_vim_ansible.sh      | Install vim, configures .vimrc for for writing ansible playbooks in yaml    |Ansible tasks (centos)
+|
+1. install_ansible.sh .<br>
+     See example in 3. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
+2. install_lazygit.sh .<br>
+     My goto cli TUI tool for doing complicated tasks with git.   
+   
+3.  webi_k9s.sh .<br> 
+    [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line (hence  the above script):
+ ```
+   curl https://webi.sh/webi | sh
+``` 
+
+
+ The webi_k9s.sh script uses webi to install only k9s and vim-essentials and dnf to install vim and git (required by webi). But you could for example install some of the following additional packages with the now newly insalled webi command:
+```
+webi lf bat gh jq ripgrep zoxide brew 
+```   
+But expect to wait a long time, especially if you are installing brew.
+
+
+4. webi_k9s_krew.sh .<br>
+   I use this script on Kodekloud's Kubernetes Playgrounds and useful on the Kodekloud Ultimate CKAD course which runs on Ubuntu. 
+
+## 3. Using Ansible to do Linux tasks
 
 The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking :-).
 
@@ -75,35 +109,3 @@ Below is a table summarizing the usage of the ansible ping ad hoc command, which
 
 
 
-## 3. Scripts
-After SSHing into the server I usually run one these scripts, depending on the task.
- 
-| /scripts (folder)        | What is does                                     | For  
-|-------------------     |--------------------------------------------------|----------------------
-|1.install_ansible.sh    |Installs ansible on jump host, copies  inventory file to jump host.     |Linux tasks: e.g. Configure Stratos App Severs
-|2. install_lazygit.sh   |Installs lazygit                                  |Git tasks (on centos)
-|3. webi_k9s.sh          |Installs vim nd k9d  using webi                   |Kubernetes tasks (on centos)
-|4. webi_k9s_krew.sh     |Install k9s using webi, ctx and ns using krew     |Kubernetes tasks (on ubuntu)
-|5.webi_vim_ansible.sh      | Install vim, configures .vimrc for ansible yaml    |Ansible tasks (centos)
-|
-1. install_ansible.sh .<br>
-     Explained in [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
-2. install_lazygit.sh .<br>
-     My goto cli TUI tool for doing complicated tasks with git.   
-   
-3.  webi_k9s.sh .<br> 
-    [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line, hence  the above script:
- ```
-   curl https://webi.sh/webi | sh
-``` 
-
-
- The webi_k9s.sh script uses webi to install only k9s and vim-essentials and dnf to install vim and git (required by webi). But you could for example install some of the following additional packages with the now newly insalled webi command:
-```
-webi lf bat gh jq ripgrep zoxide brew 
-```   
-But expect to wait a long time, especially if you are installing brew.
-
-
-4. webi_k9s_krew.sh .<br>
-   I use this script on Kodekloud's Kubernetes Playgrounds and useful on the Kodekloud Ultimate CKAD course which runs on Ubuntu. 
