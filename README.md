@@ -45,13 +45,13 @@ After SSHing into the server I usually run one these scripts, depending on the t
    
 3.  webi_k9s.sh .<br> 
     [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line (hence  the above script):
- ```
+ ```bash
    curl https://webi.sh/webi | sh
 ``` 
 
 
  The webi_k9s.sh script uses webi to install only k9s and vim-essentials and dnf to install vim and git (required by webi). But you could for example install some of the following additional packages with the now newly insalled webi command:
-```
+```bash
 webi lf bat gh jq ripgrep zoxide brew 
 ```   
 But expect to wait a long time, especially if you are installing brew.
@@ -65,18 +65,18 @@ But expect to wait a long time, especially if you are installing brew.
 The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking :-).
 
 1. The first step is to clone this repo on Jump Server 
-```
+```bash
 git clone https://github.com/journeyman33/kodekloud.git
 ```
 2. Then copy these lines Run to install the ansible install script on jump host. 
-```
+```bash
 cd /home/thor/kodekloud 
 sudo -s 
 ./scripts/install_ansible.sh  
 ```
  The ansible install script listed below will also copy ansible.cfg and the ansible inventory hosts file from the repo to the default /etc/ansible/hosts location on jump host which means that ansible can be run from anywhere and target the hostnames found in this file. 
 
-```
+```bash
 #!/bin/bash
 yum install epel-next-release -y
 yum install ansible -y
@@ -95,12 +95,66 @@ Below is a table summarizing the usage of the ansible ping ad hoc command, which
 | Stratos Load Balancer      |  ansible loadbalancer -m ping     | loadbalancer 
 | Stratos Database Server    |  ansible database -m ping         | storage
 | Stratos Backup Server      |  ansible backup -m ping           | backup
-| Stratos Mail Server        |  ansible mail -m ping             | mail
+| Stratos Mail Server        |  ansible mail -m ping             | mail 
 
 
 
-3. Now, let's write a playbook!
+3. Now, let's create a playbook!
 
+Let's say the linux task is to<br>
+``
+   "install httpd and git on the hostname 'webservers' (all 3 Strtos Appserver), 
+   and make sure Apache is listning on port 81" 
+``<br>
+The imperative way to think about this task would be:
+```bash
+ssh tony@stapp01 steve@stapp01 banner@stapp03
+sudo -s;  yum install git -y; yum httpd  -y 
+sudo sed -i 's/^Listen 80/Listen 81/' /etc/httpd/conf/httpd.conf
+systemctl start httpd
+``````
+[chatGpt](https://chat.openai.com/) will give you boilerplate yaml if you copy these command and ask for a comparable playbook.
+You will see that the playbook requires 2 modules: the yum (or package) module and the lineinfile module.
+
+However, the original word prompt, quoted above, gave me the answer right off the bat:
+```yaml
+cat > httpd.yaml <<EOF
+---
+- name: Install httpd and git on webservers
+  hosts: webservers
+  become: true  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Install httpd and git
+      yum:
+        name:
+          - httpd
+          - git
+        state: present
+      tags: 
+        - install_packages
+
+    - name: Update HTTPD port to 81
+      lineinfile:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: '^Listen 80'
+        line: 'Listen 81'
+      notify: Restart HTTPD
+      tags: 
+        - update_httpd_port
+
+  handlers:
+    - name: Restart HTTPD
+      systemd:
+        name: httpd
+        state: restarted
+EOF
+```
+
+Now, let's run the playbook  on jump_host:
+```bash
+ansible-playbook httpd.yaml
+```
 
 
 
