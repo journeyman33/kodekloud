@@ -6,8 +6,8 @@ My name is Charles Vosloo.<br><br> This is part of my <span style="color: red;">
 1. [Easy One Command to SSH to Nautilus Servers](##3.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
 1. [Scripts](##2.-Scripts)
 1. [Using Ansible to do Linux tasks](##3.-Using-Ansible-to-do-Linux-tasks)
-1. [How to Deploy applications to Kubernetes](https://journeyman33.github.io/hugo-site/)
-1. ...   
+1. [How to Deploy applications to Kubernetes - Link to my Hugo Blog site](https://journeyman33.github.io/hugo-site/)
+1.   
 
 
    
