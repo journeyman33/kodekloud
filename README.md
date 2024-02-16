@@ -62,7 +62,7 @@ But expect to wait a long time, especially if you are installing brew.
 
 ## 3. Using Ansible to do Linux tasks
 
-The best way to learn ansible is to use for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking :-).
+The best way to learn ansible is to use it for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking :-).
 
 1. The first step is to clone this repo on Jump Server 
 ```bash
