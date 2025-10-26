@@ -71,7 +71,7 @@ Many Linux [KodeKloud Engineer](https://kodekloud-engineer.com/) tasks can be au
 ### 🪜 Step 1: Clone the Repo
 ```bash
 git clone https://github.com/journeyman33/kodekloud.git
-
+```
 ### 🧰 Step 2: Install and Configure Ansible
 ```bash
 cd /home/thor/kodekloud
@@ -81,7 +81,7 @@ sudo -s
 This script also copies:
   - ansible.cfg → /etc/ansible/ansible.cfg
   - inventory/hosts → /etc/ansible/hosts
-
+```
 Now Ansible can be executed from anywhere and can target hosts using the aliases defined in the inventory file.
 
 📡 Example — Ping All Nautilus Servers
