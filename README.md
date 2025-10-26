@@ -84,22 +84,39 @@ This script also copies:
 ```
 Now Ansible can be executed from anywhere and can target hosts using the aliases defined in the inventory file.
 
-📡 Example — Ping All Nautilus Servers
-Nautilus Server(s) | Ansible ad hoc command | hostname |----------------------------|-----------------------------------|---------------| | stapp01, stapp02, stapp03 | ansible webservers -m ping | webservers | Stratos App 1 | ansible stapp01 -m ping | stapp01 | | Stratos App 2 | ansible stapp02 -m ping | stapp02 | | Stratos App 3 | ansible atapp03 -m ping | stapp03 | Stratos Load Balancer | ansible loadbalancer -m ping | loadbalancer | Stratos Database Server | ansible database -m ping | storage | Stratos Backup Server | ansible backup -m ping | backup | Stratos Mail Server | ansible mail -m ping | mail
+---
 
-🧩 Example Playbook
+## 📡 Example — Ping All Nautilus Servers
+
+| Nautilus Server(s) | Ansible ad hoc command | Hostname |
+|--------------------|------------------------|-----------|
+| stapp01, stapp02, stapp03 | `ansible webservers -m ping` | webservers |
+| Stratos App 1 | `ansible stapp01 -m ping` | stapp01 |
+| Stratos App 2 | `ansible stapp02 -m ping` | stapp02 |
+| Stratos App 3 | `ansible stapp03 -m ping` | stapp03 |
+| Stratos Load Balancer | `ansible loadbalancer -m ping` | loadbalancer |
+| Stratos Database Server | `ansible database -m ping` | storage |
+| Stratos Backup Server | `ansible backup -m ping` | backup |
+| Stratos Mail Server | `ansible mail -m ping` | mail |
+
+---
+
+## 🧩 Example Playbook
 
 Let's say the Linux task is to:
 
-“Install httpd and git on the hostname webservers (all 3 Stratos App servers) and ensure Apache listens on port 81.”
-```
-Imperative (Manual) Way:
+> “Install httpd and git on the hostname *webservers* (all 3 Stratos App servers) and ensure Apache listens on port 81.”
+
+### 🧱 Imperative (Manual) Way
+```bash
 ssh tony@stapp01 steve@stapp02 banner@stapp03
 sudo -s; yum install git -y; yum install httpd -y
 sudo sed -i 's/^Listen 80/Listen 81/' /etc/httpd/conf/httpd.conf
 systemctl start httpd
+
 ```
 Declarative (Ansible) Way:
+```
 cat > httpd.yaml <<EOF
 ---
 - name: Install httpd and git on webservers
@@ -131,19 +148,11 @@ cat > httpd.yaml <<EOF
         name: httpd
         state: restarted
 EOF
-
+```
 Run the Playbook:
 ansible-playbook httpd.yaml
 
-🧾 Summary
 
-This repository demonstrates:
-
-Real-world Linux, Ansible, Docker, and Kubernetes automation.
-
-Practical KodeKloud Engineer challenge solutions.
-
-Continuous hands-on DevOps learning and improvement through experimentation.
 
 “Automation is my way of learning by doing — and KodeKloud challenges are the perfect playground.”
 
