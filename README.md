@@ -55,7 +55,7 @@ curl https://webi.sh/webi | sh
 > 💡 *Tip:*  
 > Webi can also install utilities like `lf`, `bat`, `jq`, `ripgrep`, and `zoxide`.  
 > Just expect longer setup time, especially if you really want to install brew.
-
+```
 ---
 
 ## 3. 🧠 Using Ansible to do Linux Tasks
