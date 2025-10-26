@@ -52,87 +52,61 @@ After SSHing into the server, I typically run one of these helper scripts from t
 Example command:
 ```bash
 curl https://webi.sh/webi | sh
+> 💡 *Tip:*  
+> Webi can also install utilities like `lf`, `bat`, `jq`, `ripgrep`, and `zoxide`.  
+> Just expect longer setup time, especially if you really want to install brew.
 
-1. install_ansible.sh .<br>
-     See example in 3. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
-2. install_lazygit.sh .<br>
-     My goto cli TUI tool for doing complicated tasks with git.   
-   
-3.  webi_k9s.sh .<br> 
-    [webi](https://webinstall.dev/webi/) is an uncomplicated way to install development tools on remote servers, but setting up usually involves more steps than the advertised one line (hence  the above script):
- ```bash
-   curl https://webi.sh/webi | sh
-``` 
+---
 
+## 3. 🧠 Using Ansible to do Linux Tasks
 
- The webi_k9s.sh script uses webi to install only k9s and vim-essentials and dnf to install vim and git (required by webi). But you could for example install some of the following additional packages with the now newly insalled webi command:
-```bash
-webi lf bat gh jq ripgrep zoxide brew 
-```   
-But expect to wait a long time, especially if you are installing brew.
+The best way to learn **Ansible** is to **use it daily** for configuration management.  
+Many Linux [KodeKloud Engineer](https://kodekloud-engineer.com/) tasks can be automated via playbooks.
 
+> I first learned this approach from [Anh Nguyen’s repository](https://github.com/ntheanh201/kodekloud-engineer),  
+> where he provides elegant Ansible-based solutions to KodeKloud challenges.
 
-4. webi_k9s_krew.sh .<br>
-   I use this script on Kodekloud's Kubernetes Playgrounds and useful on the Kodekloud Ultimate CKAD course which runs on Ubuntu. 
+---
 
-## 3. Using Ansible to do Linux tasks
-
-The best way to learn ansible is to use it for all server configuration tasks as it was intended for. Many of the Linux KodeKloud Engineer questions can be done using ansible. I first leaned this from [Anh Nguyen](https://github.com/ntheanh201/kodekloud-engineer), where he provides solutions to KodeKloud Engineer linux challenges using ansible. So, instead here, I am going to provide my methodology here with an example. After installing and setting up ansible on jump host, a chatGPT prompt can help produce a sample playbook that might only need some tweaking :-).
-
-1. The first step is to clone this repo on Jump Server 
+### 🪜 Step 1: Clone the Repo
 ```bash
 git clone https://github.com/journeyman33/kodekloud.git
-```
-2. Then copy these lines Run to install the ansible install script on jump host. 
+
+### 🧰 Step 2: Install and Configure Ansible
 ```bash
-cd /home/thor/kodekloud 
-sudo -s 
-./scripts/install_ansible.sh  
-```
- The ansible install script listed below will also copy ansible.cfg and the ansible inventory hosts file from the repo to the default /etc/ansible/hosts location on jump host which means that ansible can be run from anywhere and target the hostnames found in this file. 
+cd /home/thor/kodekloud
+sudo -s
+./scripts/install_ansible.sh
 
-```bash
-#!/bin/bash
-yum install epel-next-release -y
-yum install ansible -y
-cp /home/thor/kodekloud/ansible.cfg /etc/ansible/ansible.cfg
-cp /home/thor/kodekloud/inventory/hosts /etc/ansible/hosts
-```
+This script also copies:
+  - ansible.cfg → /etc/ansible/ansible.cfg
+  - inventory/hosts → /etc/ansible/hosts
 
-Below is a table summarizing the usage of the ansible ping ad hoc command, which can now target all Nuatilus Servers using the hostnames (inventory aliases) listed below.  
+Now Ansible can be executed from anywhere and can target hosts using the aliases defined in the inventory file.
 
- Nautilus Server(s)            | Ansible ad hoc command            | hostname
-|----------------------------|-----------------------------------|---------------|
-| stapp01, stapp02, stapp03  |  ansible webservers -m ping       | webservers
-| Stratos App 1              |  ansible stapp01 -m ping          | stapp01                                         |
-| Stratos App 2              |  ansible stapp02 -m ping          | stapp02                                          |
-| Stratos App 3              |  ansible atapp03 -m ping          | stapp03
-| Stratos Load Balancer      |  ansible loadbalancer -m ping     | loadbalancer 
-| Stratos Database Server    |  ansible database -m ping         | storage
-| Stratos Backup Server      |  ansible backup -m ping           | backup
-| Stratos Mail Server        |  ansible mail -m ping             | mail 
+📡 Example — Ping All Nautilus Servers
+Nautilus Server(s)	Ansible ad hoc command	Hostname
+stapp01, stapp02, stapp03	ansible webservers -m ping	webservers
+Stratos App 1	ansible stapp01 -m ping	stapp01
+Stratos App 2	ansible stapp02 -m ping	stapp02
+Stratos App 3	ansible stapp03 -m ping	stapp03
+Stratos Load Balancer	ansible loadbalancer -m ping	loadbalancer
+Stratos Database Server	ansible database -m ping	database
+Stratos Backup Server	ansible backup -m ping	backup
+Stratos Mail Server	ansible mail -m ping	mail
+🧩 Example Playbook
 
+Let's say the Linux task is to:
 
+“Install httpd and git on the hostname webservers (all 3 Stratos App servers) and ensure Apache listens on port 81.”
 
-3. Now, let's create a playbook!
-
-Let's say the linux task is to<br>
-``
-   "install httpd and git on the hostname 'webservers' (all 3 Strtos Appserver), 
-   and make sure Apache is listning on port 81" 
-``<br>
-The imperative way to think about this task would be:
-```bash
-ssh tony@stapp01 steve@stapp01 banner@stapp03
-sudo -s;  yum install git -y; yum install httpd  -y 
+Imperative (Manual) Way:
+ssh tony@stapp01 steve@stapp02 banner@stapp03
+sudo -s; yum install git -y; yum install httpd -y
 sudo sed -i 's/^Listen 80/Listen 81/' /etc/httpd/conf/httpd.conf
 systemctl start httpd
-``````
-[chatGpt](https://chat.openai.com/) will give you boilerplate yaml if you copy these command and ask for a comparable playbook.
-You will see that the playbook requires 2 modules: the yum (or package) module and the lineinfile module.
 
-However, the original word prompt, quoted above, gave me the answer right off the bat!
-```yaml
+Declarative (Ansible) Way:
 cat > httpd.yaml <<EOF
 ---
 - name: Install httpd and git on webservers
@@ -146,7 +120,7 @@ cat > httpd.yaml <<EOF
           - httpd
           - git
         state: present
-      tags: 
+      tags:
         - install_packages
 
     - name: Update HTTPD port to 81
@@ -155,7 +129,7 @@ cat > httpd.yaml <<EOF
         regexp: '^Listen 80'
         line: 'Listen 81'
       notify: Restart HTTPD
-      tags: 
+      tags:
         - update_httpd_port
 
   handlers:
@@ -164,17 +138,22 @@ cat > httpd.yaml <<EOF
         name: httpd
         state: restarted
 EOF
-```
 
-Now, let's run the playbook  on jump_host
-```bash
+Run the Playbook:
 ansible-playbook httpd.yaml
-```
+
+🧾 Summary
+
+This repository demonstrates:
+
+Real-world Linux, Ansible, Docker, and Kubernetes automation.
+
+Practical KodeKloud Engineer challenge solutions.
+
+Continuous hands-on DevOps learning and improvement through experimentation.
+
+“Automation is my way of learning by doing — and KodeKloud challenges are the perfect playground.”
 
 
-
-
-
-
-
+---
 
