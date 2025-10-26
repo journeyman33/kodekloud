@@ -1,45 +1,58 @@
 ![KodeKloud Engineer Rank](https://img.shields.io/badge/KodeKloud_Level-DevOps_Engineer_Level_5-blue?logo=kubernetes)
 
+---
 
-Hello 🖐️ <br>
-My name is Charles Vosloo.<br><br> This is part of my <span style="color: red;">*journey*</span> learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
+# 🧑‍💻 KodeKloud Engineer Journey
 
-## Table of Contents
-1. [Easy One Command to SSH to Nautilus Servers](##3.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
-1. [Scripts](##2.-Scripts)
-1. [Using Ansible to do Linux tasks](##3.-Using-Ansible-to-do-Linux-tasks)
-1. [How to Deploy applications to Kubernetes - Link to my Hugo Blog site](https://journeyman33.github.io/hugo-site/)
-1.   
+Hello 🖐️  
+My name is **Charles Vosloo** — this repository is part of my *journey* learning **DevOps** while completing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
 
+> **Note:**  
+> “*KodeKloud Engineer tasks*” refer to the hands-on challenges offered by **Mumshad Mannambeth’s [KodeKloud educational platform](https://kodekloud.com/)** — one of the best environments for real-world DevOps practice.
 
-   
+---
 
+## 📚 Table of Contents
+1. [Easy One Command to SSH to Nautilus Servers](#1-easy-one-command-to-ssh-to-nautilus-servers)
+2. [Scripts](#2-scripts)
+3. [Using Ansible to do Linux tasks](#3-using-ansible-to-do-linux-tasks)
+4. [How to Deploy Applications to Kubernetes — Blog Post](https://journeyman33.github.io/hugo-site/)
 
-## 1. Easy One Command to SSH to Nautilus Servers
-| Server         |      User                 |  SSH                             |
-|--------------------------|--------------------------|:-----------------------------------------------------------------------------|
-| jump_host                |  thor@jump_host          |  `sshpass -p mjolnir123 ssh -o StrictHostKeyChecking=no thor@jump_host`            |
-| Stratos App 1            |  tony@stapp01            |  `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10`      |
-| Stratos App 2            |  steve@stapp02           |  `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11`     |
-| Stratos App 3            |  banner@stapp03          |  `sshpass -p BigGr33n ssh -o StrictHostKeyChecking=no banner@172.16.238.12`   |
-| Stratos Load Balancer    |  loki@stlb01             |  `sshpass -p Mischi3f ssh -o StrictHostKeyChecking=no loki@172.16.238.14`     |
-| Stratos Database Server  |  peter@stdb01            |  `sshpass -p 'Sp!dy' ssh -o StrictHostKeyChecking=no peter@172.16.239.10`     |
-| Stratos Storage Server   |  natasha@ststor01        |  `sshpass -p Bl@kW ssh -o StrictHostKeyChecking=no natasha@172.16.238.15`     |
-| Stratos Backup Server    |  clint@stbkp01           |  `sshpass -p H@wk3y3 ssh -o StrictHostKeyChecking=no clint@172.16.238.16`     |
-| Stratos Mail Server      |  groot@stmail01          |  `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17`    |
-| Jenkins Server           |  jenkins@jenkins         |  `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19`  |
+---
 
-## 2. Scripts
-After SSHing into the server I usually run one these scripts, depending on the task.
- 
-| /scripts (folder)        | What is does                                     | For  
-|-------------------     |--------------------------------------------------|----------------------
-|1.install_ansible.sh    |Installs ansible on jump host, copies  inventory file to jump host.     |Linux tasks: e.g. Configure Stratos App Severs
-|2. install_lazygit.sh   |Installs lazygit                                  |Git tasks (on centos)
-|3. webi_k9s.sh          |Installs vim nd k9d  using webi                   |Kubernetes tasks (on centos)
-|4. webi_k9s_krew.sh     |Install k9s using webi, ctx and ns using krew     |Kubernetes tasks (on ubuntu)
-|5.webi_vim_ansible.sh      | Install vim, configures .vimrc for for writing ansible playbooks in yaml    |Ansible tasks (centos)
-|
+## 1. 🧩 Easy One Command to SSH to Nautilus Servers
+
+| Server | User | SSH Command |
+|--------|------|-------------|
+| Jump Host | thor@jump_host | `sshpass -p mjolnir123 ssh -o StrictHostKeyChecking=no thor@jump_host` |
+| Stratos App 1 | tony@stapp01 | `sshpass -p Ir0nM@n ssh -o StrictHostKeyChecking=no tony@172.16.238.10` |
+| Stratos App 2 | steve@stapp02 | `sshpass -p Am3ric@ ssh -o StrictHostKeyChecking=no steve@172.16.238.11` |
+| Stratos App 3 | banner@stapp03 | `sshpass -p BigGr33n ssh -o StrictHostKeyChecking=no banner@172.16.238.12` |
+| Load Balancer | loki@stlb01 | `sshpass -p Mischi3f ssh -o StrictHostKeyChecking=no loki@172.16.238.14` |
+| Database Server | peter@stdb01 | `sshpass -p 'Sp!dy' ssh -o StrictHostKeyChecking=no peter@172.16.239.10` |
+| Storage Server | natasha@ststor01 | `sshpass -p Bl@kW ssh -o StrictHostKeyChecking=no natasha@172.16.238.15` |
+| Backup Server | clint@stbkp01 | `sshpass -p H@wk3y3 ssh -o StrictHostKeyChecking=no clint@172.16.238.16` |
+| Mail Server | groot@stmail01 | `sshpass -p Gr00T123 ssh -o StrictHostKeyChecking=no groot@172.16.238.17` |
+| Jenkins Server | jenkins@jenkins | `sshpass -p 'j@rv!s' ssh -o StrictHostKeyChecking=no jenkins@172.16.238.19` |
+
+---
+
+## 2. ⚙️ Scripts
+
+After SSHing into the server, I typically run one of these helper scripts from the `/scripts` folder depending on the task:
+
+| Script | Description | Used For |
+|--------|--------------|----------|
+| `install_ansible.sh` | Installs Ansible on jump host, copies inventory file | Linux tasks (e.g. configure Stratos App servers) |
+| `install_lazygit.sh` | Installs [Lazygit](https://github.com/jesseduffield/lazygit) | Git-related tasks |
+| `webi_k9s.sh` | Installs Vim and [k9s](https://k9scli.io/) via [webi](https://webinstall.dev/webi/) | Kubernetes tasks |
+| `webi_k9s_krew.sh` | Installs k9s with ctx and ns plugins via krew | Kubernetes (Ubuntu) tasks |
+| `webi_vim_ansible.sh` | Installs and configures Vim for Ansible YAML editing | Ansible on CentOS |
+
+Example command:
+```bash
+curl https://webi.sh/webi | sh
+
 1. install_ansible.sh .<br>
      See example in 3. [Using Ansible to do Linux tasks](##2.-Using-Ansible-to-do-Linux-tasks)
 2. install_lazygit.sh .<br>
