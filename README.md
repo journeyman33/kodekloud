@@ -1,7 +1,9 @@
+![KodeKloud Engineer Rank](https://img.shields.io/badge/KodeKloud_Level-DevOps_Engineer_Level_5-blue?logo=kubernetes)
 
 
 Hello 🖐️ <br>
 My name is Charles Vosloo.<br><br> This is part of my <span style="color: red;">*journey*</span> learning DevOps while doing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
+
 ## Table of Contents
 1. [Easy One Command to SSH to Nautilus Servers](##3.-Easy-One-Command-to-SSH-to-Nautilus-Servers)
 1. [Scripts](##2.-Scripts)
