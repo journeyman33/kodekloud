@@ -153,8 +153,8 @@ Run the Playbook:
 ansible-playbook httpd.yaml
 
 
+“Yes, ChatGPT wrote that YAML… before i tested it 😅  🧙‍♂️ 📜”
 
-“Automation is my way of learning by doing — and KodeKloud challenges are the perfect playground.”
 
 
 ---
