@@ -15,6 +15,7 @@ auth = session.post(
     json={"identifier": email, "password": password},
 )
 
+
 if auth.status_code != 200:
     print("❌ Login failed. Please verify KK_EMAIL and KK_PASSWORD secrets.")
     print(auth.text)
