@@ -1,0 +1,36 @@
+name: Update KodeKloud Stats
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # Runs once daily at 05:00 UTC
+  workflow_dispatch:      # Allows manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Update leaderboard stats
+        env:
+          KK_EMAIL: ${{ secrets.KK_EMAIL }}
+          KK_PASSWORD: ${{ secrets.KK_PASSWORD }}
+        run: python scripts/update_kodekloud_stats.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add README.md
+          git commit -m "Updated KodeKloud Rank" || echo "No changes to commit"
+          git push
