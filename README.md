@@ -1,5 +1,11 @@
 ![KodeKloud Engineer Rank](https://img.shields.io/badge/KodeKloud_Level-DevOps_Engineer_Level_5-blue?logo=kubernetes)
 
+## 🏆 Live KodeKloud Leaderboard Status
+<!-- KK_STATS_START -->
+Fetching latest ranking...
+<!-- KK_STATS_END -->
+
+
 ---
 
 # 🧑‍💻 KodeKloud Engineer Journey
