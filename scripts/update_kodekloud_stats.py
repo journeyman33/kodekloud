@@ -11,9 +11,10 @@ session = requests.Session()
 
 # Login and get JWT token
 auth = session.post(
-    "https://engineer.kodekloud.com/api/auth/local",
+    "https://engineer.kodekloud.com/auth/local",
     json={"identifier": email, "password": password},
 )
+
 
 
 if auth.status_code != 200:
