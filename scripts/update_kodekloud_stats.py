@@ -1,36 +1,53 @@
 import os
 import requests
-from bs4 import BeautifulSoup
 import re
+import json
 
 email = os.environ["KK_EMAIL"]
 password = os.environ["KK_PASSWORD"]
 
+# Start session
 session = requests.Session()
 
-# Login endpoint (standard credentials login)
-login_response = session.post("https://engineer.kodekloud.com/auth/local", json={
-    "identifier": email,
-    "password": password
-})
+# Login and get JWT token
+auth = session.post(
+    "https://engineer.kodekloud.com/api/auth/local",
+    json={"identifier": email, "password": password},
+)
 
-if login_response.status_code != 200:
-    print("❌ Login failed! Check credentials in GitHub Secrets.")
+if auth.status_code != 200:
+    print("❌ Login failed. Please verify KK_EMAIL and KK_PASSWORD secrets.")
+    print(auth.text)
     exit(1)
 
-# Get leaderboard page
-page = session.get("https://engineer.kodekloud.com/leaderboard")
-soup = BeautifulSoup(page.text, "html.parser")
+jwt = auth.json().get("jwt")
+headers = {"Authorization": f"Bearer {jwt}"}
+
+# Get leaderboard data (DevOps Architect tier)
+r = session.get(
+    "https://engineer.kodekloud.com/api/leaderboards/devops-architect",
+    headers=headers,
+)
+if r.status_code != 200:
+    print("❌ Failed to fetch leaderboard data.")
+    print(r.text)
+    exit(1)
+
+data = r.json()
 
 your_name = "Charles Vosloo"
+rank = None
+points = None
 
-user_row = soup.find("div", string=lambda x: x and your_name in x)
-if not user_row:
-    print("❌ Could not locate your name in leaderboard. Check spelling in script.")
+for entry in data:
+    if your_name.lower() in entry["user"]["username"].lower():
+        rank = entry["rank"]
+        points = entry["points"]
+        break
+
+if not rank:
+    print("❌ Could not find your username in the leaderboard data.")
     exit(1)
-
-rank = user_row.find_previous("div").text.strip()
-points = user_row.find_next("div").text.strip()
 
 # Update README
 with open("README.md", "r", encoding="utf-8") as f:
@@ -38,7 +55,6 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 start = "<!-- KK_STATS_START -->"
 end = "<!-- KK_STATS_END -->"
-
 replacement = f"""{start}
 **Current Rank:** #{rank}  
 **Total Points:** {points}
@@ -49,4 +65,5 @@ readme = re.sub(f"{start}.*?{end}", replacement, readme, flags=re.DOTALL)
 with open("README.md", "w", encoding="utf-8") as f:
     f.write(readme)
 
-print("✅ README updated with latest KodeKloud stats!")
+print(f"✅ Updated README with rank #{rank} and {points} points.")
+
