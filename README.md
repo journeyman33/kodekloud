@@ -1,14 +1,11 @@
-![KodeKloud Engineer Rank](https://img.shields.io/badge/KodeKloud_Level-DevOps_Engineer_Level_5-blue?logo=kubernetes)
+# 🧑‍💻 KodeKloud Engineer Journey
+
+![Update KodeKloud Stats](https://github.com/journeyman33/kodekloud/actions/workflows/update-kodekloud-stats.yml/badge.svg)
 
 ## 🏆 Live KodeKloud Leaderboard Status
 <!-- KK_STATS_START -->
 Fetching latest ranking...
 <!-- KK_STATS_END -->
-
-
----
-
-# 🧑‍💻 KodeKloud Engineer Journey
 
 Hello 🖐️  
 My name is **Charles Vosloo** — this repository is part of my *journey* learning **DevOps** while completing [KodeKloud Engineer](https://engineer.kodekloud.com/) challenges.
