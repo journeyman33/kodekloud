@@ -26,7 +26,8 @@ jobs:
           KK_EMAIL: ${{ secrets.KK_EMAIL }}
           KK_PASSWORD: ${{ secrets.KK_PASSWORD }}
         run: python scripts/update_kodekloud_stats.py
-
+        continue-on-error: true 
+        
       - name: Commit changes
         run: |
           git config --global user.email "actions@github.com"
