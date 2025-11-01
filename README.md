@@ -1,11 +1,13 @@
 # 🧑‍💻 KodeKloud Engineer Journey
-![KodeKloud Rank](https://img.shields.io/badge/KodeKloud_Rank-5th_–_363955_Points-blue?style=for-the-badge&logo=kubernetes)
+# 🧑‍💻 KodeKloud Engineer Journey
 
-![Update KodeKloud Stats](https://github.com/journeyman33/kodekloud/actions/workflows/update-kodekloud-stats.yml/badge.svg)
+![KodeKloud Rank](https://img.shields.io/badge/KodeKloud_Rank-5th_–_363955_Points-blue?style=for-the-badge&logo=kubernetes)
+![Update Status](https://github.com/journeyman33/kodekloud/actions/workflows/update-kodekloud-stats.yml/badge.svg)
+
 
 ## 🏆 Live KodeKloud Leaderboard Status
 <!-- KK_STATS_START -->
-Fetching latest ranking...
+**Current Rank:** #5    
 <!-- KK_STATS_END -->
 ---
 Hello 🖐️  
